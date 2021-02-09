@@ -1,3 +1,4 @@
+// js模拟队列
 const queue = [];
 
 queue.push(1)

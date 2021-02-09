@@ -1,3 +1,5 @@
+// js模拟栈
+
 const stack = [];
 
 stack.push(1);
