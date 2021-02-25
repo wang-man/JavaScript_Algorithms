@@ -11,6 +11,40 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
+
+  const addBig = (a, b) => {
+    //1.比较两个数长度  然后短的一方前面补0
+    if (a.length > b.length) {
+      let arr = Array(a.length - b.length).fill(0);
+      b = arr.join('') + b
+    } else if (a.length < b.length) {
+      let arr = Array(b.length - a.length).fill(0);
+      a = arr.join('') + a
+    }
+    //2.反转两个数 （这里是因为人习惯从左往右加 而数字相加是从右到左 因此反转一下比较好理解）
+    a = a.split('').reverse();
+    b = b.split('').reverse();
+    console.log(a, b)
+    //3.循环两个数组  并进行相加  如果和大于10 则 sign = 1,当前位置的值为(和%10)
+    let sign = 0;//标记 是否进位
+    let newVal = [];//用于存储最后的结果
+    for (let j = 0; j < a.length; j++) {
+      //除1是保证都为数字 这里也可以用Number()
+      let val = a[j] / 1 + b[j] / 1 + sign;
+      if (val >= 10) {
+        sign = 1;
+        newVal.unshift(val % 10)//这里用unshift而不是push是因为可以省了使用reverse
+      } else {
+        sign = 0;
+        newVal.unshift(val)
+      }
+    }
+
+    let result = newVal.join('');
+    return result
+
+  }
+
   let l_1 = l1, num_1 = null;
   let l_2 = l2, num_2 = null;
   while (l_1) {
@@ -21,29 +55,83 @@ var addTwoNumbers = function (l1, l2) {
     num_2 = num_2 ? `${num_2}${l_2.val}` : l_2.val + '';
     l_2 = l_2.next;
   }
-  num_1 = Number(num_1.split('').reverse().join(''));
-  num_2 = Number(num_2.split('').reverse().join(''));
+  num_1 = num_1.split('').reverse().join('');
+  num_2 = num_2.split('').reverse().join('');
 
-  const str = (num_1 + num_2 + '').split('').reverse().join('');
+  const str = addBig(num_1, num_2).split('').reverse().join('');
+  console.log('str', str);
+
   let result = null;
   let length = str.length;
   // const next = result.next;
-  console.log(str);
 
   while (length--) {
-    console.log(length);
     let last = JSON.parse(JSON.stringify(result));
     if (!result) {
       result = {};
     }
     result.val = str[length];
     result.next = last;
-    console.log(result);
   }
-
+  console.log(JSON.stringify(result))
   return result;
 };
 
-const l1 = { val: 1 }
-const l2 = { val: 2 }
+
+
+const l1 = {
+  val: 1, next: {
+    val: 0, next: {
+      val: 0, next: {
+        val: 0, next: {
+          val: 0, next: {
+            val: 0, next: {
+              val: 0, next: {
+                val: 0, next: {
+                  val: 0, next: {
+                    val: 0, next: {
+                      val: 0, next: {
+                        val: 0, next: {
+                          val: 0, next: {
+                            val: 0, next: {
+                              val: 0, next: {
+                                val: 0, next: {
+                                  val: 0, next: {
+                                    val: 0, next: {
+                                      val: 0, next: {
+                                        val: 0, next: {
+                                          val: 0, next: {
+                                            val: 0, next: {
+                                              val: 0, next: {
+                                                val: 0, next: {
+                                                  val: 0, next: { val: 0, next: { val: 0, next: { val: 0, next: { val: 0, next: { val: 1, } } } } }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+const l2 = { val: 1, next: { val: 2, next: { val: 3, next: { val: 4 } } } }
+
+
 addTwoNumbers(l1, l2)
