@@ -14,7 +14,7 @@
 var hasPathSum = function (root, targetSum) {
   if (!root) return false;
   let res = false;
-  // 着重要理解这个递归每层节点之间的执行顺序
+  // 着重要理解js代码的执行顺序结合递归的原理。就知道了这个深度遍历每层节点之间的执行顺序
   const dfs = (n, sum) => {
     console.log(n.val, sum);
     if (!n.left && !n.right && sum == targetSum) res = true;   // 判断左右没有节点，必须遍历到了叶子节点
