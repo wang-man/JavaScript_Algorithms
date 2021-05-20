@@ -17,3 +17,14 @@
 [0506/233136:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
 [0513/230802:ERROR:shell.cc(348)] Cannot client process matching existing identity:Name: exe:content_gpu User: 505C0EE9-3013-43C0-82B0-A84F50CF8D84 Instance: content_gpu
 [0513/230802:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.
+[0515/145322:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0515/145327:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0515/145332:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0515/152513:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0515/163431:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0515/163436:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0518/134109:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0519/210614:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0519/210619:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0519/210624:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0519/234106:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.

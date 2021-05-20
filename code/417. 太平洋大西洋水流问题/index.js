@@ -11,9 +11,7 @@ var pacificAtlantic = function (heights) {
   const flow2 = Array.from({ length: m }, () => new Array(n).fill(false));
   // Array.from将类数组转为数组，第二个回调函数参数的作用同数组map方法
 
-  let num = 0;
   const dfs = (row, col, flow) => {
-    num++;
     flow[row][col] = true;      // 如果进入这个递归，就给这个单元格设为true
     // 遍历给定单元格的周围上下左右四个单元格
     [[row - 1, col], [row + 1, col], [row, col - 1], [row, col + 1]].forEach(
@@ -41,25 +39,24 @@ var pacificAtlantic = function (heights) {
     dfs(0, c, flow1);          // flow1左上单元格开始遍历上横排
     dfs(m - 1, c, flow2);      // flow2左下角单元格开始遍历下横排
   }
-  console.log(num)
 
   console.log(flow1);   // flow1是记录可以流向太平洋的单元格
   console.log(flow2);   // flow2是记录可以流向大西洋的单元格
 
 
 
-  // // 收集能流到两个大洋里的坐标
-  // const res = [];
+  // 收集能流到两个大洋里的坐标
+  const res = [];
   // 使用嵌套遍历每一个单元格，在两个矩阵都为true的则符合要求
-  // for (let r = 0; r < m; r++) {
-  //   for (let c = 0; c < n; c++) {
-  //     if (flow1[r][c] && flow2[r][c]) {
-  //       res.push([r, c])
-  //     }
-  //   }
-  // }
-  // console.log(res)
-  // return res;
+  for (let r = 0; r < m; r++) {
+    for (let c = 0; c < n; c++) {
+      if (flow1[r][c] && flow2[r][c]) {
+        res.push([r, c])
+      }
+    }
+  }
+  console.log(res)
+  return res;
 };
 
 const heights = [
