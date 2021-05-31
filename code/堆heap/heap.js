@@ -1,5 +1,5 @@
 // 实现一个最小堆，并且实现它的插入功能
-class MinHeap {
+module.exports = class MinHeap {
   constructor() {
     this.heap = [];
   }
@@ -61,10 +61,10 @@ class MinHeap {
   }
 }
 
-const h = new MinHeap();
-h.insert(4)
-h.insert(3)
-h.insert(2)
-h.insert(1)     // [1, 2, 3, 4]
-h.pop();
-console.log(h)
+// const h = new MinHeap();
+// h.insert(4)
+// h.insert(3)
+// h.insert(2)
+// h.insert(1)     // [1, 2, 3, 4]
+// h.pop();
+// console.log(h)
