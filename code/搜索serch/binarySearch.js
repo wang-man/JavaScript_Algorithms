@@ -1,5 +1,5 @@
 // 二分搜索，先决条件是数组是呈现顺序排列的
-// 过程是取数组中间元素与目标数对比，如果比目标元素小，那么就用左边数组部分再去用相同方法对比，如果比之大，就用右边数组部分用同样方法对比。这样不断的折半搜索范围。
+// 过程是取数组中间元素与目标数对比，如果比目标元素小，那么就用左边数组部分的中间元素来对比，如果比之大，就用右边数组部分的中间元素对比。这样不断的折半搜索范围。
 // 关键点是折半后的数组还得记录下起始的index值。
 Array.prototype.binarySearch1 = function (item) {
   const rec = (arr, start) => {
@@ -20,7 +20,7 @@ Array.prototype.binarySearch1 = function (item) {
 Array.prototype.binarySearch2 = function (item) {
   let low = 0;
   let high = this.length - 1;
-  while (low <= hight) {
+  while (low <= high) {
     const mid = Math.floor((low + high) / 2);     // 取得中间元素的index值
     if (this[mid] < item) {
       low = mid + 1;       // 取右侧，起始index从mid+1开始
