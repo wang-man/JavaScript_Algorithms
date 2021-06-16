@@ -14,14 +14,14 @@ var isValid = function (s) {
   map.set('{', '}');
 
   for (let i = 0; i < s.length; i++) {
-    const m = s[i], n = stack[stack.length - 1];      // n是栈里最后一个
+    const c = s[i], top = stack[stack.length - 1];      // n是栈里最后一个
 
-    // if (m === ')' && n === '(' || m === ']' && n === '[' || m === '}' && n === '{') {
+    // if (c === ')' && top === '(' || c === ']' && top === '[' || c === '}' && top === '{') {
     // 利用map的特性，省去了上一行长长的判断
-    if (map.get(n) === m) {       //  总是用最后一个去比对
+    if (map.get(top) === c) {       //  总是用最后一个去比对
       stack.pop()                 //  匹配了就移除最后一个
     } else {
-      stack.push(m)
+      stack.push(c)
     }
   }
   console.log(stack);
