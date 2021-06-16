@@ -7,13 +7,13 @@ var isValid = function (s) {
   if (s.length % 2 === 1) return false;
   const stack = [];
   for (let i = 0; i < s.length; i++) {
-    const m = s[i], n = stack[stack.length - 1];
-    console.log(m, n)
+    const c = s[i], top = stack[stack.length - 1];
+    console.log(c, top)
 
-    if (m === ')' && n === '(' || m === ']' && n === '[' || m === '}' && n === '{') {
+    if (c === ')' && top === '(' || c === ']' && top === '[' || c === '}' && top === '{') {
       stack.pop()
     } else {
-      stack.push(m)
+      stack.push(c)
     }
   }
   return !stack.length
