@@ -43,3 +43,12 @@
 [0603/231133:ERROR:shell.cc(348)] Cannot client process matching existing identity:Name: exe:content_gpu User: 505C0EE9-3013-43C0-82B0-A84F50CF8D84 Instance: content_gpu
 [0603/231133:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.
 [0610/230340:ERROR:shell.cc(348)] Cannot client process matching existing identity:Name: exe:content_gpu User: 505C0EE9-3013-43C0-82B0-A84F50CF8D84 Instance: content_gpu
+[0613/173932:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/173933:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/203934:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/231330:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/231335:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/231340:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/231343:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/232852:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0613/233024:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.
