@@ -1,3 +1,10 @@
+// 唯一
+let mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+mySet.add(2);
+
+
 // 去重
 const arr = [1, 1, 2, 3, 3]
 const arr2 = [...new Set(arr)];
