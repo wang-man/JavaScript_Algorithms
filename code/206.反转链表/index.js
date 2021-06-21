@@ -14,15 +14,15 @@
 // 2.链表结构{"val":"a","next":{"val":"b","next":{"val":"d","next":{"val":"c"}}}}
 
 var reverseList = function (head) {
-  let pin1 = head, pin2 = null;
-  while (pin1) {
-    const next = pin1.next;    // 存储剩余的链表
-    pin1.next = pin2; // 关键一步：将pin2赋到到链表后面，实际这个时候pin2是前一次遍历中的pin1，这样pin1得到的值就是反转的
-    pin2 = pin1;    // 再将反转后的pin1赋为pin2，因此pin2是需要的结果
-    pin1 = next;    // pin1变为剩余的链表往后继续遍历
+  let p1 = head, p2 = null;
+  while (p1) {
+    const next = p1.next;    // 存储剩余的链表
+    p1.next = p2; // 关键一步：将p2赋到到剩余链表后面，实际这个时候p2是前一次的p1，这样就形成了反转。
+    p2 = p1;    // p1再将反转后的结果赋为p2，因此p2是需要的结果
+    p1 = next;    // p1变为剩余的链表节点往后继续遍历
   }
-  console.log(pin1, JSON.stringify(pin2))
-  return pin2;
+  // console.log(p1, JSON.stringify(p2))
+  return p2;
 };
 
 // 测试：
