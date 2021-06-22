@@ -12,5 +12,6 @@ const isInstance = (A, B) => {
 
 
 // 测试
-const result = isInstance([], Object);
-console.log(result);
+const res = isInstance([], Object);
+// const res = isInstance(function () { }, Object);
+console.log(res);

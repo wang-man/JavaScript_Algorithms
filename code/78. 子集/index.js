@@ -2,34 +2,25 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+// 解题思路：回溯思想。
+// 时间复杂度：O(2^n)
 var subsets = function (nums) {
-  const res = [[]];
-  const rec = (head, list) => {
-    for (let i = 0; i < list.length; i++) {
-      for (let j = i; j < list.length; j++) {
-        if (j === i) {
-          res.push([list[i]])
-        } else {
-          res.push([list[i]].concat(list[j]));
-        };
-        if (j - i === 2) {
-          // res.push([list[i]].concat(list.slice(i + 1, j + 1)));
-          if (head.length !== 1) {
-            res.push(head.concat(list.slice(i + 1, j + 1)));
-          }
-          res.push([list[i]].concat(list.slice(j - 1, j + 1)));
-          console.log(head)
-          // res.push(head.concat(list.slice(i, j + 1)));
-        }
-        if (j - i > 2) {
-          rec(head.concat(list[i + 1]), list.slice(i + 1, j + 1));
-        }
-      }
+  const res = [];
+  const rec = (path, l, start) => {
+    if (path.length === l) {
+      res.push(path);
+      return;
+    }
+    for (let i = start; i < nums.length; i++) {
+      rec(path.concat(nums[i]), l, i + 1);
     }
   }
-  rec([nums[0]], nums);
+  for (let i = 0; i <= nums.length; i++) {
+    rec([], i, 0)
+  }
   console.log(res)
+  return res;
 };
 
-const nums = [1, 2, 3, 4]
+const nums = [1, 2, 3]
 subsets(nums)
