@@ -10,7 +10,7 @@
  * @return {ListNode}
  */
 
-
+// 时间复杂度：O(n)，空间复杂度：O(1)；
 var deleteDuplicates = function (head) {
   let p = head;
   while (p && p.next) {

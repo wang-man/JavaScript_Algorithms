@@ -29,7 +29,7 @@ const tree = {
 const dfs = root => {
   console.log(root.val);
   // 在forEach中嵌套递归，这样总是沿一条线深入到底，然后再深入兄弟分支，这样就做到了深度优先
-  root.children && root.children.forEach(child => {     // 可直接简写为root.children && root.children.forEach(dfs)
+  root.children && root.children.forEach(child => {     // 也可简写为root.children && root.children.forEach(dfs)
     dfs(child)
   });
 }

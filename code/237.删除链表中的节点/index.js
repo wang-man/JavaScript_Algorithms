@@ -1,6 +1,4 @@
 
-// {"val":"a","next":{"val":"b","next":{"val":"d","next":{"val":"c"}}}}
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -13,6 +11,7 @@
  * @return {void} Do not return anything, modify node in-place instead.
  */
 // 解题思路：将要删掉的节点的val变成它的下一个节点val，它的next指向它下一个节点的next。相当于是用下一个节点代替掉自己。
+// 时间复杂度：O(1)，空间复杂度O(1);
 var deleteNode = function (node) {
   node.val = node.next.val;
   node.next = node.next.next;

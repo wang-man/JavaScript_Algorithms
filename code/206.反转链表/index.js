@@ -10,9 +10,7 @@
  * @return {ListNode}
  */
 
-//  题目分析：1.参数head为原链表，题目要求返回反转后的链表
-// 2.链表结构{"val":"a","next":{"val":"b","next":{"val":"d","next":{"val":"c"}}}}
-
+// 时间复杂度：O(n)，空间复杂度：O(1)
 var reverseList = function (head) {
   let p1 = head, p2 = null;
   while (p1) {
@@ -26,5 +24,5 @@ var reverseList = function (head) {
 };
 
 // 测试：
-const head = { "val": "a", "next": { "val": "b", "next": { "val": "d", "next": { "val": "c" } } } };
+const head = { val: "a", next: { val: "b", next: { val: "c" } } };
 reverseList(head);

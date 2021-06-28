@@ -12,7 +12,7 @@
  */
 
 //  链表数字正常相加即可。
-
+// 时间复杂度：O(n)，n是较长链表长度，空间复杂度：O(n)，n也是较长链表长度
 function ListNode(val, next) {
   this.val = (val === undefined ? 0 : val)
   this.next = (next === undefined ? null : next)

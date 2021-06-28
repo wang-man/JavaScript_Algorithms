@@ -3,6 +3,7 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
+// 时间复杂度：O(n^2)，空间复杂度：O(n)
 var intersection = function (nums1, nums2) {
   // 第一种方法
   // const arr1 = [...new Set(nums1)];             // 要唯一性，就得去重

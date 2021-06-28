@@ -4,6 +4,8 @@
  * @param {string} s
  * @return {boolean}
  */
+
+// 时间复杂度：O(n)，空间复杂度：O(n)
 var isValid = function (s) {
   if (s.length % 2 === 1) return false;
   const stack = [];

@@ -12,6 +12,7 @@
  */
 
 //  解题思路，建立两个一快一慢的两个指针，遍历这两个指针，如果这两个指针某次相同，那么就证明存在环
+// 空间复杂度：O(n)，空间复杂度：O(1)
 var hasCycle = function (head) {
   let p1 = head, p2 = head;   // p1慢的指针，p2快的指针
   while (p1 && p2 && p2.next) {    // p2.next无值的时候停止循环

@@ -5,7 +5,7 @@
  */
 
 // 1.优化思路，使用字典Map。map有has方法，如果target减去数组中遍历到的那个数等同于has，那么说明他们匹配上了。这样只用到一个遍历即可
-
+// 时间复杂度：O(n)， 空间复杂度：O(n);
 var twoSum = function (nums, target) {
   const map = new Map();
   for (let i = 0; i < nums.length; i++) {
