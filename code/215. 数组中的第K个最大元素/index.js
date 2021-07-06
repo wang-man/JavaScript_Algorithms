@@ -4,7 +4,7 @@
  * @return {number}
  */
 
-const MinHeap = require('../堆heap/heap');
+const MinHeap = require('../堆heap/minHeap');
 
 // 解法一：最简单的排序就行了。。。。。
 var findKthLargest1 = function (nums, k) {
@@ -26,9 +26,10 @@ var findKthLargest2 = function (nums, k) {
       heap.pop();
     }
   });
-  return heap.peek();
+  console.log(heap);
+  return heap.peek();   // 拿堆顶
 }
 
-const res = findKthLargest2([2, 4, 1, 5, 8, 2, 6, 3, 6], 3)
+const res = findKthLargest2([2, 4, 1, 5, 8, 2, 6, 3, 6], 4);  // 找到第n大数字
 console.log(res);
 

@@ -22,7 +22,7 @@ module.exports = class MinHeap {
   // 2.新节点与父节点对比，向上攀爬
   shiftUp(index) {
     if (index === 0) return;
-    const parentIndex = Math.floor((index - 1) / 2);   // 根据子节点的index获取父节点的index
+    const parentIndex = this.getParentIndex(index);   // 根据子节点的index获取父节点的index
     if (this.heap[parentIndex] > this.heap[index]) {
       this.swap(parentIndex, index);
       this.shiftUp(parentIndex);      // 递归
@@ -49,7 +49,7 @@ module.exports = class MinHeap {
   // 删除堆顶
   pop() {
     this.heap[0] = this.heap.pop();   // 将最后一个拿来替换头部
-    this.shiftDown(0);                // 然后这个新的头部向下移动
+    this.shiftDown(0);                // 然后这个新的头部向下移动。
   }
   // 获取堆顶
   peek() {
