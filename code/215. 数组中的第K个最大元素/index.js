@@ -18,6 +18,8 @@ findKthLargest1([2, 4, 1, 5, 8, 2, 6, 3, 6], 3)
 
 
 // 解法二：使用堆。。。。。
+// 整个流程就是：未超过容量时，每次插进新的一个，就尝试向上爬到一个位置。超过容量后，如果新插入的比堆顶还小，它会先作为堆顶，然后pop方法会将其用末尾的大数踢掉，大数字再往下沉，最后堆的容量恢复，结构再次稳定。
+// 时间复杂度：O(n*logK)，空间复杂度：O(k)
 var findKthLargest2 = function (nums, k) {
   const heap = new MinHeap();
   nums.forEach(n => {
@@ -30,6 +32,6 @@ var findKthLargest2 = function (nums, k) {
   return heap.peek();   // 拿堆顶
 }
 
-const res = findKthLargest2([2, 4, 1, 5, 8, 2, 6, 3, 6], 4);  // 找到第n大数字
+const res = findKthLargest2([2, 4, 2, 5, 8, 1, 1, 1], 5);  // 找到第n大数字
 console.log(res);
 

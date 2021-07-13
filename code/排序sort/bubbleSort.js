@@ -5,17 +5,15 @@
 // 针对所有的元素重复以上的步骤，除了最后一个。 [1] 
 // 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
 // 从视觉上看，元素从左往右不停的交换，较大的那个都会向右移动，效果就像冒泡一样。
+// 时间复杂度：O(n^2)
 Array.prototype.bubbleSort = function () {
-  let index = 0;
   for (let i = 0; i < this.length - 1; i++) {
-    index = 0;
-    while (index < this.length - 1 - i) {   // 随着遍历，数组尾部已是排序完的结果，因此不再需要去对比
-      const f = this[index], s = this[index + 1];   // 取相邻的两个
-      if (f > s) {                                  // 如果前一个大于后一个，就交换两者位置
-        this[index + 1] = f;
-        this[index] = s;
+    for (let j = 0; j < this.length - 1 - i; j++) {     // 减去i是因为末尾是已经排序过的，就不必再去和它们对比了
+      if (this[j] > this[j + 1]) {
+        const temp = this[j];                      // 如果前一个大于后一个，就交换两者位置
+        this[j] = this[j + 1];
+        this[j + 1] = temp;
       }
-      index++;
     }
   }
 }

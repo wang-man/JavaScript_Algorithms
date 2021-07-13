@@ -4,7 +4,7 @@
 Array.prototype.mergeSort = function () {
   const rec = (arr) => {
     if (arr.length === 1) return arr;    // 拆分为每个数字一个数组
-    const mid = Math.floor(arr.length / 2);
+    const mid = Math.floor(arr.length / 2); // 两两均分
     const left = arr.slice(0, mid);
     const right = arr.slice(mid, arr.length);
     const orderedLeft = rec(left);    // 排序之后的,第一波分别为 [5],[8], [6]，第二波为[3, 5], 
@@ -12,7 +12,7 @@ Array.prototype.mergeSort = function () {
     const res = [];
     while (orderedLeft.length || orderedRight.length) {
       if (orderedLeft.length && orderedRight.length) {
-        res.push(orderedLeft[0] < orderedRight[0] ? orderedLeft.shift() : orderedRight.shift());
+        res.push(orderedLeft[0] < orderedRight[0] ? orderedLeft.shift() : orderedRight.shift());  // 取第一个元素
       } else if (orderedLeft.length) {  // 只其中一个有值的情况
         res.push(orderedLeft.shift())
       } else if (orderedRight.length) {
