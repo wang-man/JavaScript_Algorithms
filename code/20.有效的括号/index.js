@@ -3,11 +3,12 @@
  * @param {string} s
  * @return {boolean}
  */
+// 时间复杂度：O(n)，空间复杂度：O(n)
 var isValid = function (s) {
   if (s.length % 2 === 1) return false;
   const stack = [];
   for (let i = 0; i < s.length; i++) {
-    const c = s[i], top = stack[stack.length - 1];
+    const c = s[i], top = stack[stack.length - 1];  // c:即将入栈的，top：栈顶
     console.log(c, top)
 
     if (c === ')' && top === '(' || c === ']' && top === '[' || c === '}' && top === '{') {
@@ -19,4 +20,4 @@ var isValid = function (s) {
   return !stack.length
 };
 
-console.log(isValid('[()]'))
+console.log(isValid('()[]{}({[]})}'))

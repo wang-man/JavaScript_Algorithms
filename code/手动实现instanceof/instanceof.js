@@ -9,9 +9,9 @@ const isInstance = (A, B) => {
   }
   return false;
 }
-
-
+// const f = ()=>{}
+// f.__proto__.__proto__ === Object.prototype   // true
 // 测试
-const res = isInstance([], Object);
-// const res = isInstance(function () { }, Object);
+// const res = isInstance([], Object);
+const res = isInstance(function () { }, Object);
 console.log(res);

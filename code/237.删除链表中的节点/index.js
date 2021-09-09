@@ -32,4 +32,4 @@ d.next = c
 
 deleteNode(d)
 console.log(JSON.stringify(a))  // {"val":"a","next":{"val":"b","next":{"val":"c"}}}
-console.log(JSON.stringify(d))    // ?
+// console.log(JSON.stringify(d))    // ?

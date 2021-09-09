@@ -1,13 +1,13 @@
-const func1 = () => {
+function func1() {
   console.log(1)
   func2();
 }
 
-const func2 = () => {
+function func2() {
   console.log(2)
   func3();
 }
-const func3 = () => {
+function func3() {
   console.log(3)
 }
 
